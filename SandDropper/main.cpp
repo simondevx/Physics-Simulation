@@ -101,8 +101,12 @@ int main() {
                 if (pos.x >= 0 && pos.x < dimensions[0] && pos.y >= 0 && pos.y < dimensions[1]) {
                     screen[pos.x][pos.y] = Sandkorn{};
                     for (int i = 1; i < brushSize; i++) {
-                        screen[pos.x + i][pos.y] = Sandkorn{};
-                        screen[pos.x - i][pos.y] = Sandkorn{};
+                        if (pos.x + i >= 0 && pos.x + i < dimensions[0]) {
+                            screen[pos.x + i][pos.y] = Sandkorn{};
+                        }
+                        if (pos.x - i >= 0 && pos.x - i < dimensions[0]) {
+                            screen[pos.x - i][pos.y] = Sandkorn{};
+                        }
                     }
                 }
             }
