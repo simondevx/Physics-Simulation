@@ -6,10 +6,14 @@
 #include <SFML/System/Clock.hpp>
 #include <SFML/Window/Event.hpp>
 
+#include <windows.h>
+
 int main() {
     sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "Physics Simulation");
     window.setFramerateLimit(60);
     ImGui::SFML::Init(window);
+
+    bool keepOpen = true;
 
     sf::Clock deltaClock;
     while (window.isOpen()) {
@@ -34,12 +38,30 @@ int main() {
             ImGuiWindowFlags_NoSavedSettings
         );
         
+        ImGui::SetWindowFontScale(2.0f);
         ImGui::Text("Choose a Simulation");
+        ImGui::SetWindowFontScale(1.0f);
+
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
+
+        ImGui::Checkbox("Keep Selector open", &keepOpen);
+
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
         if (ImGui::Button("Ball Collisions")) {
+            ImGui::SFML::Shutdown();
+            window.close();
+            if (keepOpen) {
+                system("start Selector.exe");
+            }
             system("start BallCollisions.exe");
         }
         if (ImGui::Button("Sand Dropper")) {
+            ImGui::SFML::Shutdown();
+            window.close();
+            if (keepOpen) {
+                system("start Selector.exe");
+            }
             system("start SandDropper.exe");
         }
 
