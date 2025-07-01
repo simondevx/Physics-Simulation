@@ -25,10 +25,14 @@ This is a 2D physics simulation currently consisting of two main parts: a sand d
 - Reset playground
 
 **Selector**
-- Can select desired Simulation from here
-- buggy -> if this doesnt work just use the corresponding exe
+- Can select desired simulation from here
 
 
+## Demo
+
+You can watch the programm demo here:
+
+[![Physics Simulation DEMO](https://img.youtube.com/vi/LONnhYj6EYM/0.jpg)](https://www.youtube.com/watch?v=LONnhYj6EYM)
 ## Run Locally
 
 Clone the project
