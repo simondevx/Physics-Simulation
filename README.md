@@ -38,7 +38,7 @@ You can watch the programm demo here:
 Clone the project
 
 ```bash
-  git clone https://github.com/simonrosebrock/Physics-Simulation
+  git clone https://github.com/simondevx/Physics-Simulation
 ```
 
 Navigate to the Release Build
